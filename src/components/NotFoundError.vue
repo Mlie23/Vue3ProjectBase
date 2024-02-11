@@ -43,6 +43,6 @@
 import { router } from "../main";
 
 function previousPage() {
-  router.back();
+  router.push('/')
 }
 </script>
