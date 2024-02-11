@@ -4,13 +4,13 @@
 
     <main class="flex-grow">
       <router-view />
-    <!-- <HelloWorld /> -->
+      <!-- <HelloWorld /> -->
     </main>
     <FooterComponent />
   </div>
 </template>
 
 <script setup>
-import NavigationBar from './components/NavigationBar.vue';
-import FooterComponent from './components/FooterComponent.vue';
+import NavigationBar from "./components/NavigationBar.vue";
+import FooterComponent from "./components/FooterComponent.vue";
 </script>
