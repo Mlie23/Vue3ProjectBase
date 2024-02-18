@@ -1,10 +1,16 @@
-stages:
-  - validate
-
-validate:
-  stage: validate
-  script:
-    - yarn install
-    - yarn fix --silent
-    - git add .
-    - if git diff --quiet; then echo "No changes after running yarn fix"; else echo "Changes detected after running yarn fix"; exit 1; fi
+name: This is a great start of our project
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  validate:
+    steps:
+    - name: Check if yarn fix has ben run
+    - run: yarn install
+    - run: yarn fix --silent
+    - run: git add.
+    - run: if git diff --quiet; then echo "No changes after running yarn fix"; else echo "Changes detected after running yarn fix"; exit 1; fi
