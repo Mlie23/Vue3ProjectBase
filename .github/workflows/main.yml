@@ -1,0 +1,10 @@
+stages:
+  - validate
+
+validate:
+  stage: validate
+  script:
+    - yarn install
+    - yarn fix --silent
+    - git add .
+    - if git diff --quiet; then echo "No changes after running yarn fix"; else echo "Changes detected after running yarn fix"; exit 1; fi
