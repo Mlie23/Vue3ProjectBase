@@ -7,6 +7,8 @@ jobs:
     - name: Check if yarn fix has ben run
       run: |
         ls
+        cd ..
+        ls
         yarn install
         yarn fix --silent
         git add.
