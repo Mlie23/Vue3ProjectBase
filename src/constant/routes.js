@@ -6,7 +6,7 @@ import { createWebHistory, createRouter } from "vue-router";
 const routerHistory = createWebHistory();
 export var ROUTES = [
   {
-    path: "/dashboard",
+    path: "/home",
     component: HelloWorldView,
   },
   {
@@ -22,7 +22,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.path == "/") {
-    next({ path: "/dashboard" });
+    next({ path: "/home" });
   } else {
     next();
   }
