@@ -4,11 +4,9 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
     - name: Check if yarn fix has ben run
       run: |
-        ls
-        cd ..
-        ls
         yarn install
         yarn fix --silent
         git add.
