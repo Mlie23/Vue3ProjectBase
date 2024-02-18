@@ -2,6 +2,7 @@ name: This is a great start of our project
 on: push
 jobs:
   validate:
+    runs-on: ubuntu-latest
     steps:
     - name: Check if yarn fix has ben run
       run: |
