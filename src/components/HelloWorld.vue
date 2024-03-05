@@ -5,10 +5,12 @@
     <div>Right??</div>
     <div>Right?!?!</div>
   </div>
+  <SlideShow></SlideShow>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import SlideShow from "./SlideShow.vue";
 const name = ref("Hello world");
 name.value = "Test";
 </script>
