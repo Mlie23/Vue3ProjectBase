@@ -16,6 +16,8 @@
     "@fortawesome/vue-fontawesome": "^3.0.6",
     "core-js": "^3.36.0",
     "i": "^0.3.7",
+    "ol": "^9.0.0",
+    "ol-ext": "^4.0.16",
     "pinia": "^2.1.7",
     "prettier": "^3.2.5",
     "vue": "^3.4.21",
