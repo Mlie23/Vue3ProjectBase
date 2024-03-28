@@ -31,4 +31,3 @@
 import { companyInfo } from "@/constant/companyInfo";
 const mailTo = `mailto:${companyInfo.email}?subject = Feedback&body = Message`;
 </script>
-
