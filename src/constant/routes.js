@@ -1,4 +1,5 @@
 /*eslint-disable*/
+import AboutUs from "@/components/AboutUs.vue";
 import HelloWorldView from "../components/HelloWorld.vue";
 import NotFoundErrorView from "../components/NotFoundError.vue";
 import { createWebHistory, createRouter } from "vue-router";
@@ -8,6 +9,10 @@ export var ROUTES = [
   {
     path: "/home",
     component: HelloWorldView,
+  },
+  {
+    path: "/about",
+    component: AboutUs,
   },
   {
     path: "/:pathMatch(.*)*",
