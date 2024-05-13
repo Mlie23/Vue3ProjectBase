@@ -3,6 +3,7 @@ import AboutUs from "@/components/AboutUs.vue";
 import HelloWorldView from "../components/HelloWorld.vue";
 import ContactUs from "../components/ContactUs.vue";
 import NotFoundErrorView from "../components/NotFoundError.vue";
+import GeneralMenuView from "../components/GeneralMenu.vue";
 import { createWebHistory, createRouter } from "vue-router";
 
 const routerHistory = createWebHistory();
@@ -18,6 +19,10 @@ export var ROUTES = [
   {
     path: "/contact",
     component: ContactUs,
+  },
+  {
+    path: "/menu",
+    component: GeneralMenuView,
   },
   {
     path: "/:pathMatch(.*)*",

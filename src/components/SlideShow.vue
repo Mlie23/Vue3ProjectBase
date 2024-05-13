@@ -4,12 +4,12 @@
     v-for="(image, index) in images"
     :key="image"
     v-show="index == currentIndex"
-    class="h-full w-full object-cover"
+    class="h-full w-full overflow-hidden flex-grow"
   >
     <img
       v-show="index == currentIndex"
       :src="image"
-      class="w-full h-full object-cover"
+      class="w-full object-cover h-full"
     />
     <button
       @click="prevSlide"
