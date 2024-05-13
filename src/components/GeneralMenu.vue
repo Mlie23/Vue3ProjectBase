@@ -1,8 +1,6 @@
 <template>
   <div class="w-full px-12 py-4">
-    <div class="text-4xl font-bold flex justify-center">
-      Menu
-    </div>
+    <div class="text-4xl font-bold flex justify-center">Menu</div>
     <div class="flex justify-start">
       <input
         type="search"
@@ -27,7 +25,7 @@
       </span>
     </div>
     <div v-for="type in menuTypes" :key="type" class="pt-2">
-    <h1 class="text-3xl font-bold">{{ type }}</h1>
+      <h1 class="text-3xl font-bold">{{ type }}</h1>
       <div v-for="menu in filteredMenu(type)" :key="menu.name" class="py-1">
         <div class="flex flex-row items-center">
           <div class="font-bold">{{ menu.name }} - ${{ menu.price }}</div>
@@ -51,7 +49,9 @@
           </div>
         </div>
       </div>
-      <div v-if="menuLength[type] == 0" class="text-red-500">Sorry, no match was found</div>
+      <div v-if="menuLength[type] == 0" class="text-red-500">
+        Sorry, no match was found
+      </div>
     </div>
   </div>
 </template>
@@ -62,9 +62,9 @@ import { ref, computed } from "vue";
 const filterQuery = ref("");
 const menuTypes = ref(["Appetizer", "Entree", "Dessert"]);
 const menuLength = ref({
-  "Appetizer": undefined,
-  "Entree": undefined,
-  "Dessert": undefined
+  Appetizer: undefined,
+  Entree: undefined,
+  Dessert: undefined,
 });
 const menuItems = ref([
   {
@@ -75,7 +75,7 @@ const menuItems = ref([
     description:
       "Spice up your taste buds with our Spicy Noodles with Shrimp. This dish is a perfect blend of bold flavors and succulent shrimp, creating a delightful culinary experience.",
     ingredients: ["Noodles", "Shrimp", "Spices", "Vegetables"],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Grilled Salmon Salad",
@@ -91,7 +91,7 @@ const menuItems = ref([
       "Cucumbers",
       "Balsamic Dressing",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Vegetarian Stir-Fry",
@@ -108,7 +108,7 @@ const menuItems = ref([
       "Tofu",
       "Soy Sauce",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "BBQ Pulled Pork Sandwich",
@@ -124,7 +124,7 @@ const menuItems = ref([
       "Pickles",
       "Coleslaw",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Classic Cheeseburger",
@@ -141,7 +141,7 @@ const menuItems = ref([
       "Pickles",
       "Bun",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Crispy Chicken Caesar Salad",
@@ -157,7 +157,7 @@ const menuItems = ref([
       "Parmesan Cheese",
       "Caesar Dressing",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Vegetarian Pizza",
@@ -175,7 +175,7 @@ const menuItems = ref([
       "Olives",
       "Tomatoes",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Grilled Salmon Fillet",
@@ -191,7 +191,7 @@ const menuItems = ref([
       "Roasted Vegetables",
       "Lemon Butter Sauce",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Spaghetti Bolognese",
@@ -201,7 +201,7 @@ const menuItems = ref([
     description:
       "Treat yourself to our Spaghetti Bolognese, featuring al dente spaghetti tossed in a rich and savory meat sauce made with ground beef, tomatoes, onions, and aromatic herbs.",
     ingredients: ["Spaghetti", "Ground Beef", "Tomatoes", "Onions", "Herbs"],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Crispy Fried Chicken Wings",
@@ -211,7 +211,7 @@ const menuItems = ref([
     description:
       "Enjoy our Crispy Fried Chicken Wings, perfectly seasoned and fried to golden perfection, served with your choice of dipping sauce.",
     ingredients: ["Chicken Wings", "Flour", "Seasonings", "Dipping Sauce"],
-    type: "Appetizer"
+    type: "Appetizer",
   },
   {
     name: "Margherita Pizza",
@@ -228,7 +228,7 @@ const menuItems = ref([
       "Basil Leaves",
       "Olive Oil",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Caesar Salad",
@@ -243,7 +243,7 @@ const menuItems = ref([
       "Parmesan Cheese",
       "Caesar Dressing",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Mushroom Risotto",
@@ -259,7 +259,7 @@ const menuItems = ref([
       "Garlic",
       "Parmesan Cheese",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Beef Tacos",
@@ -276,7 +276,7 @@ const menuItems = ref([
       "Salsa",
       "Corn Tortillas",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Caprese Salad",
@@ -292,7 +292,7 @@ const menuItems = ref([
       "Balsamic Glaze",
       "Olive Oil",
     ],
-    type: "Entree"
+    type: "Entree",
   },
   {
     name: "Garlic Parmesan Fries",
@@ -302,7 +302,7 @@ const menuItems = ref([
     description:
       "Indulge in our Garlic Parmesan Fries, featuring crispy golden fries tossed with garlic butter and grated Parmesan cheese. A flavorful appetizer that's perfect for sharing or enjoying on your own.",
     ingredients: ["French Fries", "Garlic Butter", "Parmesan Cheese"],
-    type: "Appetizer"
+    type: "Appetizer",
   },
   {
     name: "Mozzarella Sticks",
@@ -312,7 +312,7 @@ const menuItems = ref([
     description:
       "Satisfy your cravings with our Mozzarella Sticks, made with golden-brown breading and oozing with melted mozzarella cheese. Served with marinara sauce for dipping, they're the perfect appetizer for cheese lovers.",
     ingredients: ["Mozzarella Cheese", "Breadcrumbs", "Marinara Sauce"],
-    type: "Appetizer"
+    type: "Appetizer",
   },
   {
     name: "Loaded Nachos",
@@ -328,9 +328,9 @@ const menuItems = ref([
       "Jalapenos",
       "Sour Cream",
       "Guacamole",
-      "Salsa"
+      "Salsa",
     ],
-    type: "Appetizer"
+    type: "Appetizer",
   },
   {
     name: "New York Cheesecake",
@@ -340,7 +340,7 @@ const menuItems = ref([
     description:
       "Treat yourself to a slice of our New York Cheesecake, featuring a velvety smooth cream cheese filling on a buttery graham cracker crust. It's a classic dessert that's sure to satisfy your sweet tooth.",
     ingredients: ["Cream Cheese", "Sugar", "Eggs", "Graham Crackers", "Butter"],
-    type: "Dessert"
+    type: "Dessert",
   },
   {
     name: "Chocolate Lava Cake",
@@ -350,7 +350,7 @@ const menuItems = ref([
     description:
       "Indulge in our Chocolate Lava Cake, a rich and moist chocolate cake with a gooey molten center. Served warm with a scoop of vanilla ice cream, it's the ultimate dessert for chocolate lovers.",
     ingredients: ["Chocolate Cake", "Chocolate Ganache", "Vanilla Ice Cream"],
-    type: "Dessert"
+    type: "Dessert",
   },
   {
     name: "Fruit Tart",
@@ -360,8 +360,8 @@ const menuItems = ref([
     description:
       "Enjoy our Fruit Tart, a delightful dessert featuring a buttery pastry crust filled with creamy custard and topped with an assortment of fresh seasonal fruits. It's a colorful and refreshing treat for any occasion.",
     ingredients: ["Pastry Crust", "Custard", "Assorted Fresh Fruits"],
-    type: "Dessert"
-  }
+    type: "Dessert",
+  },
 ]);
 
 const emptyFilter = () => {
@@ -374,14 +374,19 @@ const filteredMenu = (type) => {
     data = menuItems.value.filter((item) => {
       let hasIngredients = false;
       for (let ingredient of item.ingredients) {
-        if (ingredient.toLowerCase().includes(filterQuery.value.toLowerCase())) {
+        if (
+          ingredient.toLowerCase().includes(filterQuery.value.toLowerCase())
+        ) {
           hasIngredients = true;
           break;
         }
       }
-      return (item.name.toLowerCase().includes(filterQuery.value.toLowerCase()) || hasIngredients) && item.type == type;
-    }
-    );
+      return (
+        (item.name.toLowerCase().includes(filterQuery.value.toLowerCase()) ||
+          hasIngredients) &&
+        item.type == type
+      );
+    });
     // filteredItems.value.includes(item => item.name == filteredItems);
   }
   menuLength.value[type] = data.length;
