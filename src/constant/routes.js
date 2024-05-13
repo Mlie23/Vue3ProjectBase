@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import HelloWorldView from "../components/HelloWorld.vue";
 import NotFoundErrorView from "../components/NotFoundError.vue";
+import GeneralMenuView from "../components/GeneralMenu.vue";
 import { createWebHistory, createRouter } from "vue-router";
 
 const routerHistory = createWebHistory();
@@ -8,6 +9,10 @@ export var ROUTES = [
   {
     path: "/home",
     component: HelloWorldView,
+  },
+  {
+    path: "/menu",
+    component: GeneralMenuView,
   },
   {
     path: "/:pathMatch(.*)*",
